@@ -1,4 +1,5 @@
 ﻿import sys
+print("DEBUG: Script started", file=sys.stderr)
 import time
 import os
 import shutil
@@ -14,21 +15,19 @@ WATCH_DIR = os.path.join(BASE_DIR, "02_音声")
 PROCESSED_DIR = os.path.join(WATCH_DIR, "processed")
 OUTPUT_DIR = os.path.join(BASE_DIR, "03_知識ベース", "00_文字起こしログ")
 
-def get_lock_file():
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "transcribe.lock")
+# Global lock file path to avoid NameError at exit
+LOCK_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "transcribe.lock")
 
 def clean_lock_file():
-    lock_file = get_lock_file()
-    if os.path.exists(lock_file):
-        try: os.remove(lock_file)
+    if os.path.exists(LOCK_FILE_PATH):
+        try: os.remove(LOCK_FILE_PATH)
         except OSError: pass
 
 def check_single_instance():
     # Simple lock mechanism to prevent multiple instances
-    lock_file = get_lock_file()
-    if os.path.exists(lock_file):
+    if os.path.exists(LOCK_FILE_PATH):
         try:
-            with open(lock_file, 'r') as f:
+            with open(LOCK_FILE_PATH, 'r') as f:
                 pid = int(f.read().strip())
             if psutil.pid_exists(pid):
                 print(f"[Info] Another instance is already running (PID: {pid}). Exiting.")
@@ -39,7 +38,7 @@ def check_single_instance():
         except: clean_lock_file()
     
     try:
-        with open(lock_file, 'w') as f: f.write(str(os.getpid()))
+        with open(LOCK_FILE_PATH, 'w') as f: f.write(str(os.getpid()))
         atexit.register(clean_lock_file)
         return True
     except: return False

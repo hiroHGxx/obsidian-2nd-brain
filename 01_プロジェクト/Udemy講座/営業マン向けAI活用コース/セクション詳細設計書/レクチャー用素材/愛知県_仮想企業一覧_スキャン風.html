@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>愛知県 企業名簿（スキャン風）</title>
+    <style>
+        body {
+            background-color: #e0e0e0; /* スキャンっぽい背景色 */
+            font-family: "MS Mincho", "Sawarabi Mincho", serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        .page {
+            background-color: white;
+            width: 800px;
+            padding: 40px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            transform: rotate(-0.7deg); /* 絶妙な傾き */
+            filter: contrast(1.2) brightness(0.9); /* 文字を少し濃く/暗く */
+        }
+        h1 {
+            text-align: center;
+            font-size: 20px;
+            text-decoration: underline;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 5px;
+            /* あえて文字間を少しバラつかせる */
+            letter-spacing: -0.5px;
+        }
+        .fuzzy {
+            filter: blur(0.3px); /* わずかなボケ */
+        }
+    </style>
+</head>
+<body>
+    <div class="page fuzzy">
+        <p style="text-align: right; font-size: 10px;">資料番号：2026-02-09-V</p>
+        <h1>愛知県 企業一覧（野菜・果物シリーズ）</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>会社名</th>
+                    <th>業種</th>
+                    <th>住所</th>
+                    <th>代表者</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>トマト精密工業株式会社</td><td>製造業</td><td>愛知県名古屋市中区栄3-15-27</td><td>田中太郎</td></tr>
+                <tr><td>株式会社キャベツシステムズ</td><td>IT</td><td>愛知県豊田市江田町4-5-6</td><td>佐々木大介</td></tr>
+                <tr><td>リンゴ商事株式会社</td><td>小売業</td><td>愛知県一宮市栄町7-8-9</td><td>伊藤誠</td></tr>
+                <tr><td>ナスソリューションズ株式会社</td><td>IT</td><td>愛知県豊田市挙母町2-1-8</td><td>鈴木一郎</td></tr>
+                <tr><td>ピーマン食品株式会社</td><td>小売業</td><td>愛知県岡崎市康生通東1-5-3</td><td>渡辺和夫</td></tr>
+                <tr><td>レタステクノサービス株式会社</td><td>IT</td><td>愛知県名古屋市中村区名駅4-7-1</td><td>山田美咲</td></tr>
+                <tr><td>タマネギ包装資材株式会社</td><td>製造業</td><td>愛知県安城市三河安城町1-10-6</td><td>中島健二</td></tr>
+                <tr><td>株式会社バナナITソリューションズ</td><td>IT</td><td>愛知県一宮市本町1-8-3</td><td>鈴木一郎</td></tr>
+                <tr><td>有限会社まるや商店</td><td>小売業</td><td>愛知県一宮市本町4-2-10</td><td>佐藤花子</td></tr>
+                <tr><td>株式会社オクラ精工</td><td>製造業</td><td>愛知県岡崎市竜美南1-2-3</td><td>山田太郎</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 50px; font-size: 10px; color: #666;">
+            ※本資料はコピー厳禁です。取り扱いには十分注意してください。<br>
+            スキャン時のノイズが含まれる場合があります。
+        </p>
+    </div>
+</body>
+</html>

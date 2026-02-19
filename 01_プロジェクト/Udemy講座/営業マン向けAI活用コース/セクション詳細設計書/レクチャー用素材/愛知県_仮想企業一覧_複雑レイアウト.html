@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>愛知県 商工ニュース（高難度レイアウト）</title>
+    <style>
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+            color: #222;
+            line-height: 1.4;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 0.8fr; /* 3カラムにして情報をさらに分散 */
+            gap: 15px;
+        }
+        header {
+            border-bottom: 3px solid #333;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .col { padding: 10px; border: 1px solid #eee; }
+        h2 { font-size: 16px; background: #444; color: white; padding: 5px; margin-top: 0; }
+        
+        /* 表を使わずに表っぽく見せる（AIを迷わせるポイント） */
+        .list-row {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+            font-size: 11px;
+        }
+        .list-header { font-weight: bold; background: #f2f2f2; }
+        .cell-name { width: 40%; }
+        .cell-addr { width: 35%; }
+        .cell-boss { width: 25%; }
+
+        .break-line {
+            background: #fff0f0;
+            font-size: 9px;
+            padding: 3px;
+            margin: 5px 0;
+            border: 1px dashed red;
+        }
+        .ad-box {
+            font-size: 11px;
+            background: #ffffcc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <p style="margin: 0; font-size: 12px;">2026年2月臨時号</p>
+            <h1 style="margin: 0; font-size: 22px;">愛知ビジネス・アーカイブ</h1>
+        </div>
+        <div style="text-align: right; font-size: 11px;">発行：愛知県野菜果物連合会</div>
+    </header>
+
+    <div class="main-grid">
+        <!-- 第1カラム：記事（ここに紛らわしい社名を散らす） -->
+        <div class="col">
+            <h2>【特集】EVシフトと地域経済</h2>
+            <p>今回の取材で判明したのは、トマト精密工業株式会社（代表：田中太郎）の先見性です。彼らはレタス市中区ピーチに拠点を置きながら、世界標準の技術を磨いています。</p>
+            <p>また、ナスソリューションズの鈴木一郎氏によれば、キャベツ市の挙母町2-1-8に新設されたセンターが、リンゴ商事（イチゴ市）との物流網を劇的に変えるとのこと。「ピーマン食品（ズッキーニ市）の成功例を見習いたい」と、みかわ食品の渡辺和夫氏も意欲を燃やしています。</p>
+            <div class="ad-box">
+                【PR】タマネギ包装資材（安城市）では、現在中島健二マネージャーのもと、新規ライン工を募集中。電話 0566-12-3456 までお問い合わせを。
+            </div>
+        </div>
+
+        <!-- 第2カラム：断片的なデータ（ここがメインの抽出対象っぽく見えるが...） -->
+        <div class="col">
+            <h2>新規加盟店・事業所データ</h2>
+            <div class="list-row list-header">
+                <div class="cell-name">事業体名称</div>
+                <div class="cell-addr">所在地</div>
+                <div class="cell-boss">責任者</div>
+            </div>
+            <div class="list-row">
+                <div class="cell-name">レタステクノサービス</div>
+                <div class="cell-addr">レタス市中村区名駅</div>
+                <div class="cell-boss">山田美咲</div>
+            </div>
+            <div class="break-line">※上記企業のシステム保守はポテトシステムが担当しています</div>
+            <div class="list-row">
+                <div class="cell-name">バナナITソリューション</div>
+                <div class="cell-addr">イチゴ市本町</div>
+                <div class="cell-boss">鈴木一郎</div>
+            </div>
+            <div class="list-row">
+                <div class="cell-name">有限会社まるや商店</div>
+                <div class="cell-addr">イチゴ市本町</div>
+                <div class="cell-boss">佐藤花子</div>
+            </div>
+            <div class="list-row">
+                <div class="cell-name">株式会社オクラ精工</div>
+                <div class="cell-addr">ズッキーニ市竜美南</div>
+                <div class="cell-boss">山田太郎</div>
+            </div>
+            <p style="font-size: 10px; margin: 10px 0;">（次ページへ続く...）</p>
+        </div>
+
+        <!-- 第3カラム：補足情報（ここにもデータを散らす） -->
+        <div class="col">
+            <h2>関連組織一覧</h2>
+            <p style="font-size: 11px;">以下の組織も、今回のプロジェクトにおいて重要な役割を果たしています。</p>
+            <ul style="font-size: 11px; padding-left: 20px;">
+                <li>有限会社イチゴプラス（キャベツ市）</li>
+                <li>ブロッコリーメタル（レタス市中川区）</li>
+                <li>株式会社セロリ製作所（キャベツ市小坂町）</li>
+            </ul>
+            <div class="ad-box" style="background: #eef;">
+                【寄稿】キウイITソリューション 斎藤圭介氏<br>
+                「DXはレタス市から始まる」
+            </div>
+        </div>
+    </div>
+</body>
+</html>
